@@ -1,0 +1,144 @@
+<Machine name='User_Machine' type='abstraction'>
+<Sets>
+<Set>
+<Id value='NAMES' typref='4176652771'/>
+</Set>
+</Sets>
+<Abstract_Variables>
+<Id value='total' typref='2701647786'/>
+<Id value='credits' typref='652404009'/>
+<Id value='users' typref='4176652771'/>
+</Abstract_Variables>
+<Properties>
+<Exp_Comparison op=':'>
+<Id value='NAMES' typref='4176652771'/>
+<Unary_Exp op='FIN' typref='1381694304'>
+<Id value='NAMES' typref='4176652771'/>
+</Unary_Exp>
+</Exp_Comparison>
+</Properties>
+<Invariant>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Id value='total' typref='2701647786'/>
+<Id value='NAT' typref='3603043417'/>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;:'>
+<Id value='users' typref='4176652771'/>
+<Id value='NAMES' typref='4176652771'/>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Id value='credits' typref='652404009'/>
+<Binary_Exp op='+-&gt;' typref='652404009'>
+<Id value='users' typref='4176652771'/>
+<Id value='NAT' typref='3603043417'/>
+</Binary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Invariant>
+<Initialisation>
+<Nary_Sub op='||'>
+<Assignement_Sub>
+<Variables>
+<Id value='credits' typref='652404009'/>
+</Variables>
+<Values>
+<EmptySet typref='3817003670'/>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Variables>
+<Id value='total' typref='2701647786'/>
+</Variables>
+<Values>
+<Unary_Exp op='card' typref='2701647786'>
+<Id value='users' typref='4176652771'/>
+</Unary_Exp>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Variables>
+<Id value='users' typref='4176652771'/>
+</Variables>
+<Values>
+<EmptySet typref='3817003670'/>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Initialisation>
+<Operations>
+<Operation name='add_user'>
+<Input_Parameters>
+<Id value='nn' typref='1027503136'/>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Id value='nn' typref='1027503136'/>
+<Id value='NAMES' typref='4176652771'/>
+</Exp_Comparison>
+<Exp_Comparison op='/:'>
+<Id value='nn' typref='1027503136'/>
+<Id value='users' typref='4176652771'/>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Variables>
+<Id value='users' typref='4176652771'/>
+</Variables>
+<Values>
+<Binary_Exp op='\/' typref='4176652771'>
+<Id value='users' typref='4176652771'/>
+<Nary_Exp op='{' typref='4176652771'>
+<Id value='nn' typref='1027503136'/>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='4176652771'>
+<Unary_Exp op='POW'>
+<Id value='NAMES'/>
+</Unary_Exp>
+</Type>
+<Type id='2701647786'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='652404009'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='NAMES'/>
+<Id value='INTEGER'/>
+</Binary_Exp>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='1381694304'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='NAMES'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='3603043417'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3817003670'>
+<Unary_Exp op='POW'>
+<Generic_Type/>
+</Unary_Exp>
+</Type>
+<Type id='1027503136'>
+<Id value='NAMES'/>
+</Type>
+</TypeInfos>
+
+</Machine>

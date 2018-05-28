@@ -1,0 +1,33 @@
+THEORY ProofList IS
+_f(1) & _f(2) & WellDefinednessInitialisation.1,(_f(17) => _f(18));
+_f(1) & _f(2) & _f(10) & _f(11) & add_user.2,(_f(3) & _f(8) => _f(13));
+_f(1) & _f(2) & _f(10) & _f(11) & add_user.1,(_f(3) & _f(6) => _f(12));
+_f(1) & _f(2) & Initialisation.3,(_f(3) & _f(8) => _f(9));
+_f(1) & _f(2) & Initialisation.2,(_f(3) & _f(6) => _f(7));
+_f(1) & _f(2) & Initialisation.1,(_f(3) & _f(4) => _f(5))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+NAMES: FIN(INTEGER) & not(NAMES = {}) & ((NAMES) : (FIN(NAMES)));
+"Invariant is preserved";
+"Check invariant ((total) : (NAT))";
+((card(users)) : (NAT));
+"Check invariant users : POW( NAMES)";
+{} : POW( NAMES);
+"Check invariant ((credits) = (((users) +-> (NAT))))";
+(({}) = ((({}) +-> (NAT))));
+((total) : (NAT)) & users : POW( NAMES) & ((credits) = (((users) +-> (NAT))));
+((nn) : (NAMES)) & not(nn : users);
+((users) \/ ({nn})) : POW( NAMES);
+((credits) = (((((users) \/ ({nn}))) +-> (NAT))));
+NAMES: FIN(INTEGER) & not(NAMES = {});
+users : POW( NAMES);
+((total) : (NAT));
+"Well definedness";
+((users) : (FIN(users)));
+((nn) : (NAMES))
+END
+&
+THEORY EnumerateX
+END

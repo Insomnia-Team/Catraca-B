@@ -4,5 +4,8 @@
     <project decomp_dir="C:\Users\yuri.wrlk\Desktop\Metodos Formais\catraca_b\bdp\expand_src" old_decomp_dir="C:\Users\yuri.wrlk\Desktop\Metodos Formais\catraca_b\bdp\src">
         <!-- Definition directory list -->
         <!-- Component file list -->
+        <component_file path="C:/Users/yuri.wrlk/Desktop/Metodos Formais/catraca_b" name="User_Machine" suffix="mch" user="yuri.wrlk">
+            <component name="User_Machine" type="specification" />
+        </component_file>
     </project>
 </db_xml>
